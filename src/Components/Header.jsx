@@ -23,6 +23,19 @@ const Header = () => {
                             <NavLink className="dropdown-item" to="use-effect-basic">Use effect - basic</NavLink>
                             <NavLink className="dropdown-item" to="use-effect-didmount">Use effect - didmount</NavLink>
                             <NavLink className="dropdown-item" to="use-effect-unmount">Use effect - unmount</NavLink>
+                            <NavLink className="dropdown-item" to="use-callback-demo">Use callback demo</NavLink>
+                            <NavLink className="dropdown-item" to="use-memo-demo">Use memo demo</NavLink>
+                            <NavLink className="dropdown-item" to="use-ref-dom">Use ref dom</NavLink>
+                            <NavLink className="dropdown-item" to="use-ref-demo">Use ref demo</NavLink>
+                            
+                        </div>
+                    </li>
+                    <li className="nav-item dropdown">
+                        <NavLink className="nav-link dropdown-toggle" to="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hook - redux</NavLink>
+                        <div className="dropdown-menu" aria-labelledby="dropdownId">
+                            <NavLink className="dropdown-item" to="use-redux-change-number">Redux - change number</NavLink>
+                            <NavLink className="dropdown-item" to="use-redux-fake-book-app">
+                                Redux - Fake book app</NavLink>
                         </div>
                     </li>
                 </ul>
