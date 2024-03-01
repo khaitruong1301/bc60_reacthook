@@ -8,6 +8,7 @@ const initialState = {
     ]
 }
 
+// arrComment = ['001','002','002','002']
 const fakeBookReducer = createSlice({
   name: 'fakeBookReducer',
   initialState,

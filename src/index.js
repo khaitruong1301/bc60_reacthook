@@ -17,6 +17,12 @@ import { store } from './redux/store'
 import { Provider } from 'react-redux'
 import ChangeNumberRedux from './Pages/ReduxDemo/ChangeNumberRedux';
 import FakeBookApp from './Pages/ReduxDemo/FakeBookApp';
+import Login from './Pages/Login';
+import ForgotPass from './Pages/ForgotPass';
+import Profile from './Pages/Profile';
+import UseParamDemo from './Pages/UseParamDemo';
+import Search from './Pages/Search';
+import CustomHookDemo from './Pages/CustomHookDemo';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -35,6 +41,15 @@ root.render(
           <Route path='use-ref-demo' element={<UseRefDemo />}></Route>
           <Route path='use-redux-change-number' element={<ChangeNumberRedux />}></Route>
           <Route path='use-redux-fake-book-app' element={<FakeBookApp />}></Route>
+          <Route path='login' element={<Login />}></Route>
+          <Route path='forgot-pass' element={<ForgotPass />}></Route>
+          <Route path='profile' element={<Profile />}></Route>
+          <Route path='search' element={<Search />}></Route>
+          <Route path='custom-hook-demo' element={<CustomHookDemo />}></Route>
+
+          <Route path='useparam-demo'>
+            <Route path=':thamSo' element={<UseParamDemo />}></Route>
+          </Route>
           <Route path='detail'>
             <Route path=':id' element={<Detail />}></Route>
           </Route>

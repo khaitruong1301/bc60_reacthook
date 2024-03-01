@@ -20,7 +20,7 @@ const FakeBookApp = () => {
     const handleSubmit = (e) =>{
         e.preventDefault()
         //Gửi action lên redux
-        const action = addCommentAction(commentRef.current);
+        const action = addCommentAction({...commentRef.current});
         dispatch(action)
     }
 

@@ -10,10 +10,13 @@ const Header = () => {
             <div className="collapse navbar-collapse" id="collapsibleNavId">
                 <ul className="navbar-nav me-auto mt-2 mt-lg-0">
                     <li className="nav-item">
-                        <a className="nav-link active" href="#" aria-current="page">Home <span className="visually-hidden">(current)</span></a>
+                        <NavLink className="nav-link active" to="/" aria-current="page">Home <span className="visually-hidden">(current)</span></NavLink>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Link</a>
+                        <NavLink className="nav-link" to="/login">Login</NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/search">Search</NavLink>
                     </li>
                     <li className="nav-item dropdown">
                         <NavLink className="nav-link dropdown-toggle" to="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hooks</NavLink>
@@ -27,7 +30,7 @@ const Header = () => {
                             <NavLink className="dropdown-item" to="use-memo-demo">Use memo demo</NavLink>
                             <NavLink className="dropdown-item" to="use-ref-dom">Use ref dom</NavLink>
                             <NavLink className="dropdown-item" to="use-ref-demo">Use ref demo</NavLink>
-                            
+                            <NavLink className="dropdown-item" to="custom-hook-demo">Custom hook</NavLink>
                         </div>
                     </li>
                     <li className="nav-item dropdown">
