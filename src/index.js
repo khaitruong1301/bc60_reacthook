@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, unstable_HistoryRouter as HistoryRouter } from 'react-router-dom';
 import HomeTemplate from './Templates/HomeTemplate';
 import ChangeNumber from './Pages/UseStateDemo/ChangeNumber';
 import FormUser from './Pages/UseStateDemo/FormUser';
@@ -23,10 +23,16 @@ import Profile from './Pages/Profile';
 import UseParamDemo from './Pages/UseParamDemo';
 import Search from './Pages/Search';
 import CustomHookDemo from './Pages/CustomHookDemo';
+//Cấu hình chuyển hướng trang khi xử lý không phải là function component
+import {createBrowserHistory} from 'history'
+export const history =  createBrowserHistory()
+
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
+  <HistoryRouter history={history}>
     <Provider store={store}>
       <Routes>
         <Route path='' element={<HomeTemplate />}>
@@ -56,6 +62,6 @@ root.render(
         </Route>
       </Routes>
     </Provider>
-  </BrowserRouter>
+  </HistoryRouter>
 );
 
