@@ -41,6 +41,14 @@ const Header = () => {
                                 Redux - Fake book app</NavLink>
                         </div>
                     </li>
+                    <li className="nav-item dropdown">
+                        <NavLink className="nav-link dropdown-toggle" to="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Quản lý sinh viên</NavLink>
+                        <div className="dropdown-menu" aria-labelledby="dropdownId">
+                            <NavLink className="dropdown-item" to="/danh-sach-sinh-vien">Danh sách sinh viên</NavLink>
+                            <NavLink className="dropdown-item" to="/them-sinh-vien">Thêm sinh viên</NavLink>
+                            
+                        </div>
+                    </li>
                 </ul>
                 <form className="d-flex my-2 my-lg-0">
                     <input className="form-control me-sm-2" type="text" placeholder="Search" />

@@ -24,8 +24,7 @@ const Profile = () => {
     getApiProfile()
   }, [])
 
-
-
+  
   return (
     <div className='container'>
       <h3>Profile</h3>

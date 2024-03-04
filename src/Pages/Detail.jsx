@@ -2,29 +2,24 @@ import { NavLink, useParams } from "react-router-dom"
 import React, { useEffect, useState } from 'react'
 import axios from "axios"
 import { http } from "../util/config"
+import { useDispatch, useSelector } from "react-redux"
+import { getApiProductDetailActionAsync } from "../redux/reducers/productReducer"
 
 const Detail = () => {
     //useParam dùng để lấy tham số trên thanh url
     const params = useParams()
-    const [prodDetail, setProdDetail] = useState({})
+    const {prodDetail} = useSelector(state =>state.productReducer)
+    const dispatch = useDispatch()
+    console.log(prodDetail)
 
-    const getProductDetailApi = async () => {
-        try {
-            const res = await http.get('/api/Product/getbyid?id=' + params.id);
-            //Sau khi lấy dữ liệu từ api về thì đưa dữ liệu vào state prodDetail
-            setProdDetail(res.data.content)
-            console.log(res.data.content)
-        }catch(err) {
-            console.log(err)
-        }
-        
+    const getApiProductDetail = async ()=>{
+        const action = getApiProductDetailActionAsync(params.id)
+        dispatch(action)
     }
 
-    useEffect(() => {
-        //Gọi api sau khi giao diện vừa load xong
-        //useEffect có dependency thường dùng cho các trang getDetail (tham số trên url)
-        getProductDetailApi()
-    }, [params.id]) //setup dependency của useEffect để tự kích hoạt lại hàm này mỗi khi tham số thay đổi
+    useEffect(()=>{
+        getApiProductDetail()
+    },[params.id])
 
     return (
         <div className="container">

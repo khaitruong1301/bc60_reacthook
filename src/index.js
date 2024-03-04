@@ -25,10 +25,12 @@ import Search from './Pages/Search';
 import CustomHookDemo from './Pages/CustomHookDemo';
 //Cấu hình chuyển hướng trang khi xử lý không phải là function component
 import {createBrowserHistory} from 'history'
+import Home from './Pages/Home';
+import ProductList from './Pages/ProductList';
+import ThemSinhVien from './Pages/QuanLySinhVien/ThemSinhVien';
+import ThongTinSinhVien from './Pages/QuanLySinhVien/ThongTinSinhVien';
+import DanhSachSinhVien from './Pages/QuanLySinhVien/DanhSachSinhVien';
 export const history =  createBrowserHistory()
-
-
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -36,6 +38,8 @@ root.render(
     <Provider store={store}>
       <Routes>
         <Route path='' element={<HomeTemplate />}>
+          <Route element={<Home />} index ></Route>
+          <Route path='product-list' element={<ProductList />}  ></Route>
           <Route path='use-state-demo1' element={<ChangeNumber />}></Route>
           <Route path='use-state-demo2' element={<FormUser />}></Route>
           <Route path='use-effect-basic' element={<UseEffectBasic />}></Route>
@@ -52,7 +56,11 @@ root.render(
           <Route path='profile' element={<Profile />}></Route>
           <Route path='search' element={<Search />}></Route>
           <Route path='custom-hook-demo' element={<CustomHookDemo />}></Route>
-
+          <Route path='them-sinh-vien' element={<ThemSinhVien />}></Route>
+          <Route path='danh-sach-sinh-vien' element={<DanhSachSinhVien />}></Route>
+          <Route path='thong-tin-sinh-vien'>
+            <Route path=':maSinhVien'  element={<ThongTinSinhVien />}></Route>
+          </Route>
           <Route path='useparam-demo'>
             <Route path=':thamSo' element={<UseParamDemo />}></Route>
           </Route>
