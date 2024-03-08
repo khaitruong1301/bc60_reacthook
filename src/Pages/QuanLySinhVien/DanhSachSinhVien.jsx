@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {NavLink} from 'react-router-dom'
-import { layDanhSachSinhVienActionAsync, xoaSinhVienApiActionAsync } from '../../redux/reducers/sinhVienReducer'
+import { layDanhSachSinhVienActionAsync, xoaSinhVienApiActionAsync, xoaSinhVienAsyncThunk } from '../../redux/reducers/sinhVienReducer'
 import ThemSinhVien from './ThemSinhVien'
+import Loading_API from './Loading_API'
 const DanhSachSinhVien = () => {
     const {arrSinhVien} = useSelector(state => state.sinhVienReducer)
     console.log(arrSinhVien)
@@ -47,10 +48,18 @@ const DanhSachSinhVien = () => {
                     <td>{sv.soDienThoai}</td>
                     <td>
                         <NavLink to={`/thong-tin-sinh-vien/${sv.maSinhVien}`} className={'btn btn-primary mx-2'}>Sửa</NavLink>
-                        <button className={'btn btn-danger mx-2'} onClick={()=>{
-                            const actionThunk = xoaSinhVienApiActionAsync(sv.maSinhVien);
-                            dispatch(actionThunk)
-                        }}>Xoá</button>
+                        <button className={'btn btn-danger mx-2 '} onClick={()=>{
+                            //Cách 1:
+                            // const actionThunk = xoaSinhVienApiActionAsync(sv.maSinhVien);
+                            // dispatch(actionThunk)
+                            //cách 2: dùng async thunk
+                            const action = xoaSinhVienAsyncThunk(sv.maSinhVien)
+                            dispatch(action)
+                        }}> Xoá 
+                        
+                        <Loading_API />
+                        
+                        </button>
                     </td>
                 </tr>
                 })}

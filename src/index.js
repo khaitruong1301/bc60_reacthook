@@ -30,6 +30,11 @@ import ProductList from './Pages/ProductList';
 import ThemSinhVien from './Pages/QuanLySinhVien/ThemSinhVien';
 import ThongTinSinhVien from './Pages/QuanLySinhVien/ThongTinSinhVien';
 import DanhSachSinhVien from './Pages/QuanLySinhVien/DanhSachSinhVien';
+import DemoModalHoc from './Pages/DemoModalHoc';
+import Register from './Pages/Register';
+import DemoContainerComponent from './Pages/DemoContainerComponent';
+import HomeMobile from './Pages/HomeMobile.jsx';
+import ReponsiveItem from './Templates/ReponsiveItem.jsx'
 export const history =  createBrowserHistory()
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -38,7 +43,7 @@ root.render(
     <Provider store={store}>
       <Routes>
         <Route path='' element={<HomeTemplate />}>
-          <Route element={<Home />} index ></Route>
+          <Route element={<ReponsiveItem component={<Home />} mobileComponent={<HomeMobile />} />} index ></Route>
           <Route path='product-list' element={<ProductList />}  ></Route>
           <Route path='use-state-demo1' element={<ChangeNumber />}></Route>
           <Route path='use-state-demo2' element={<FormUser />}></Route>
@@ -57,6 +62,7 @@ root.render(
           <Route path='search' element={<Search />}></Route>
           <Route path='custom-hook-demo' element={<CustomHookDemo />}></Route>
           <Route path='them-sinh-vien' element={<ThemSinhVien />}></Route>
+          
           <Route path='danh-sach-sinh-vien' element={<DanhSachSinhVien />}></Route>
           <Route path='thong-tin-sinh-vien'>
             <Route path=':maSinhVien'  element={<ThongTinSinhVien />}></Route>
@@ -67,6 +73,9 @@ root.render(
           <Route path='detail'>
             <Route path=':id' element={<Detail />}></Route>
           </Route>
+          <Route path='hoc-modal' element={<DemoModalHoc />}></Route>
+          <Route path='container-modal' element={<DemoContainerComponent />}></Route>
+          <Route path='register' element={<Register />}></Route>
         </Route>
       </Routes>
     </Provider>

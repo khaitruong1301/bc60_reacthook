@@ -35,7 +35,7 @@ const Home = () => {
         <h3>Home</h3>
         <div className='row'>
             {arrProduct.map((prod)=>{
-                return <div className='col-4 mt-2' key={prod.id}>
+                return <div className='col-md-4 mt-2' key={prod.id}>
                     <div className='card'>
                         <img src={prod.image} alt='...' />
                         <div className='card-body'>

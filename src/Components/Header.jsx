@@ -42,6 +42,13 @@ const Header = () => {
                         </div>
                     </li>
                     <li className="nav-item dropdown">
+                        <NavLink className="nav-link dropdown-toggle" to="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">HOC</NavLink>
+                        <div className="dropdown-menu" aria-labelledby="dropdownId">
+                            <NavLink className="dropdown-item" to="hoc-modal">Hoc - modal</NavLink>
+                            <NavLink className="dropdown-item" to="container-modal">Container - modal</NavLink>
+                        </div>
+                    </li>
+                    <li className="nav-item dropdown">
                         <NavLink className="nav-link dropdown-toggle" to="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Quản lý sinh viên</NavLink>
                         <div className="dropdown-menu" aria-labelledby="dropdownId">
                             <NavLink className="dropdown-item" to="/danh-sach-sinh-vien">Danh sách sinh viên</NavLink>
