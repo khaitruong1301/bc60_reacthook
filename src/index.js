@@ -25,7 +25,7 @@ import Search from './Pages/Search';
 import CustomHookDemo from './Pages/CustomHookDemo';
 //Cấu hình chuyển hướng trang khi xử lý không phải là function component
 import {createBrowserHistory} from 'history'
-import Home from './Pages/Home';
+
 import ProductList from './Pages/ProductList';
 import ThemSinhVien from './Pages/QuanLySinhVien/ThemSinhVien';
 import ThongTinSinhVien from './Pages/QuanLySinhVien/ThongTinSinhVien';
@@ -33,8 +33,12 @@ import DanhSachSinhVien from './Pages/QuanLySinhVien/DanhSachSinhVien';
 import DemoModalHoc from './Pages/DemoModalHoc';
 import Register from './Pages/Register';
 import DemoContainerComponent from './Pages/DemoContainerComponent';
-import HomeMobile from './Pages/HomeMobile.jsx';
+
 import ReponsiveItem from './Templates/ReponsiveItem.jsx'
+import HomeMobile from './Pages/Home/HomeMobile.jsx';
+import Home from './Pages/Home/Home.jsx';
+import FirstDemo from './Pages/AntD/FirstDemo.jsx';
+import TableAntd from './Pages/AntD/TableAntd.jsx';
 export const history =  createBrowserHistory()
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -62,6 +66,7 @@ root.render(
           <Route path='search' element={<Search />}></Route>
           <Route path='custom-hook-demo' element={<CustomHookDemo />}></Route>
           <Route path='them-sinh-vien' element={<ThemSinhVien />}></Route>
+          <Route path='first-demo-antd' element={<FirstDemo />}></Route>
           
           <Route path='danh-sach-sinh-vien' element={<DanhSachSinhVien />}></Route>
           <Route path='thong-tin-sinh-vien'>
@@ -76,6 +81,8 @@ root.render(
           <Route path='hoc-modal' element={<DemoModalHoc />}></Route>
           <Route path='container-modal' element={<DemoContainerComponent />}></Route>
           <Route path='register' element={<Register />}></Route>
+          <Route path='table-antd' element={<TableAntd />}></Route>
+
         </Route>
       </Routes>
     </Provider>

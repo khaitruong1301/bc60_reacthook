@@ -1,21 +1,12 @@
 import React, { useEffect } from 'react'
-import { getApiActionAsync } from '../redux/reducers/productReducer'
+import { getApiActionAsync } from '../../redux/reducers/productReducer'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
+import useHome from './useHome'
 
 const HomeMobile = () => {
-    // const [arrProduct,setArrayProduct] = useState([])
-    const { arrProduct } = useSelector(state => state.productReducer)
-    const dispatch = useDispatch()
-    console.log(arrProduct)
-    const getProductApi = async () => {
-        const action = getApiActionAsync;
-        dispatch(action)
-    }
-
-    useEffect(() => {
-        getProductApi()
-    }, [])
+    const {arrProduct} = useHome()
+  
     return (
         <div className='container'>
             <h3>Danh sách sản phẩm</h3>
